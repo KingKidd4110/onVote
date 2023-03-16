@@ -3,7 +3,7 @@ from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy import select, func
 import uuid
 
-# create a new SQLAlchemy object
+
 db = SQLAlchemy()
 
 
