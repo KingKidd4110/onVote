@@ -28,9 +28,11 @@ def make_celery(votr):
         def __call__(self, *args, **kwargs):
             with votr.app_context():
                 return TaskBase.__call__(self, *args, **kwargs)
+
     celery.Task = ContextTask
 
     return celery
+
 
 votr = Flask(__name__)
 
@@ -65,7 +67,6 @@ def home():
 @votr.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-
         # get the user details from the form
         email = request.form['email']
         username = request.form['username']
@@ -130,5 +131,4 @@ def polls():
 
 @votr.route('/polls/<poll_name>')
 def poll(poll_name):
-
     return render_template('index.html')
