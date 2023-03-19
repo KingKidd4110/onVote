@@ -106,7 +106,7 @@ def login():
             # The hash matches the password in the database log the user in
             session['user'] = username
 
-            flash('Login was succesfull')
+            flash('Login was successful')
     else:
         # user wasn't found in the database
         flash('Username or password is incorrect please try again', 'error')
